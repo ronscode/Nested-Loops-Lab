@@ -4,22 +4,22 @@ Write a function to generate all​ 4-digit happy numbers​ ​{d1}{d2}{d3}{d4}
 */
 
 function happyNumber(n) {
-  let happyNums = [];
+	let happyNums = [];
 
-  for (i = 0; i <= 9999; i++) {
-    let bigNum = i.toString().split("").map(Number);
+	for (i = 0; i <= 9999; i++) {
+		let bigNum = i.toString().split("").map(Number);
 
-    let num1 = bigNum[0];
-    let num2 = bigNum[1];
-    let num3 = bigNum[2];
-    let num4 = bigNum[3];
+		let d1 = bigNum[0];
+		let d2 = bigNum[1];
+		let d3 = bigNum[2];
+		let d4 = bigNum[3];
 
-    if (num1 + num2 === n && num3 + num4 === n) {
-      happyNums.push(i);
-    }
-  }
+		if (d1 + d2 === n && d3 + d4 === n) {
+			happyNums.push(i);
+		}
+	}
 
-  console.log(happyNums.join(" "));
+	console.log(happyNums.join(" "));
 }
 
 happyNumber(3);
