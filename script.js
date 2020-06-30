@@ -1,24 +1,25 @@
-function numDishes(n, dish) {
-	var array = 1;
-	var beginningDetergent = 750 * n;
-	var totalDetergentUsed = 0;
-	var plateValue = 5;
-	var potValue = 15;
-	var totalPots = 0;
-	var totalPlates = 0;
-	var i = 0;
-	var dtu = 0;
-
-	while (dish[i] != "End") {
-		if (i / 3 == 0) {
-			dtu = 5;
+function main(hour, minute) {
+	var time = "";
+	while (hour <= 23) {
+		if (hour < 10) {
+			time += "0" + hour + " : ";
 		} else {
-			dtu = 15;
+			time += hour + " : ";
 		}
-		i++;
+		while (minute < 59) {
+			if (minute < 10) {
+				time += "0" + minute;
 
-		console.log(dtu);
+				minute++;
+			} else {
+				time += minute;
+				minute++;
+			}
+		}
+
+		hour++;
+		minute = 0;
+		console.log(time);
 	}
 }
-
-numDishes(2, [53, 65, 55, "End"]);
+main(8, 5);
